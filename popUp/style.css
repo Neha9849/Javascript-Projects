@@ -6,9 +6,10 @@ body{
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    background-color: rgb(162, 122, 202);
 }
 .popup-container{
-    background-color: rgba(0, 0, 0, 0.238);
+    background-color: rgba(0, 0, 0, 0.354);
     position: fixed;
     top: 0;
     bottom: 0;
