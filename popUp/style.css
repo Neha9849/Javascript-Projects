@@ -1,0 +1,42 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+.popup-container{
+    background-color: rgba(0, 0, 0, 0.238);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+.active{
+    display: flex;
+}
+#popup{
+    width: 500px;
+    height: 30%;
+    background-color:rebeccapurple;
+    color: white;
+}
+h1{
+    padding: 30px;
+    text-shadow: 2px 3px black;
+    text-align: center;
+}
+h3{
+    text-align: center;
+}
+#close{
+    float: right;
+    margin: 10px;
+}
+
