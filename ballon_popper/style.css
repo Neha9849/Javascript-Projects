@@ -1,0 +1,16 @@
+body{
+    background-color: black;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+.float-square {
+    position: fixed;
+    border-radius: 100%;
+    opacity: 0.8;
+    z-index: -1;
+}
+.blast{
+     display: none;
+     tr
+}
