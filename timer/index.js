@@ -58,6 +58,7 @@ okbtn.addEventListener("click", () => {
 });
 //edit timer
 timebox.addEventListener('click',()=>{
+  hr=0;min=0;sec=0;
   settimer.classList.add('settimer-active');
 
 })
@@ -74,13 +75,13 @@ si.addEventListener('input',()=>{
 //set btn on click
 setbtn.addEventListener("click", () => {
   settimer.classList.remove("settimer-active");
-  console.log(String(hr).padStart(2,'0'),String(min).padStart(2,'0'),sec);
   secbox.innerHTML = String(sec).padStart(2,'0');
   minbox.innerHTML =String(min).padStart(2,'0'); 
   hrbox.innerHTML = String(hr).padStart(2,'0');
 });
 //on edit btn click
 editbtn.addEventListener('click',()=>{
+  hr=0; min=0; sec=0;
   settimer.classList.add('settimer-active');
 })
 
