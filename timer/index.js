@@ -12,12 +12,15 @@ const setbtn = document.getElementById("set-btn");
 const hi = document.getElementById("hr-i");
 const mi = document.getElementById("min-i");
 const si = document.getElementById("sec-i");
+const editbtn=document.getElementById('edit');
 let hr = 0;
-let min = 0;
-let sec = 10;
+let min = 1;
+let sec = 0;
 //start function
 function starttimer(ih,im,is){
-  console.log(ih,im,is);
+  ih=Number(ih);
+  im=Number(im);
+  is=Number(is);
   ts = is + im * 60 + ih * 3600;
   tm = is * (1 / 60) + im + ih * 60;
   th = is * (1 / 3600) + im * (1 / 60) + ih;
@@ -36,13 +39,10 @@ function starttimer(ih,im,is){
 }
 //reset function
 function resettimer() {
-  ts = sec + min * 60 + hr * 3600;
-  tm = sec * (1 / 60) + min + hr * 60;
-  th = sec * (1 / 3600) + min * (1 / 60) + hr;
-  secbox.innerHTML = String(Math.floor(ts % 60)).padStart(2, "0");
-  minbox.innerHTML = String(Math.floor(tm % 60)).padStart(2, "0");
-  hrbox.innerHTML = String(Math.floor(th)).padStart(2, "0");
-  clearInterval(timer);
+    clearInterval(timer);
+    secbox.innerHTML = String(sec).padStart(2,'0');
+    minbox.innerHTML =String(min).padStart(2,'0'); 
+    hrbox.innerHTML = String(hr).padStart(2,'0');
 }
 //start
 start.addEventListener("click",( )=>{
@@ -73,6 +73,14 @@ si.addEventListener('input',()=>{
 })
 //set btn on click
 setbtn.addEventListener("click", () => {
-  starttimer(hr,min,sec);
   settimer.classList.remove("settimer-active");
+  console.log(String(hr).padStart(2,'0'),String(min).padStart(2,'0'),sec);
+  secbox.innerHTML = String(sec).padStart(2,'0');
+  minbox.innerHTML =String(min).padStart(2,'0'); 
+  hrbox.innerHTML = String(hr).padStart(2,'0');
 });
+//on edit btn click
+editbtn.addEventListener('click',()=>{
+  settimer.classList.add('settimer-active');
+})
+

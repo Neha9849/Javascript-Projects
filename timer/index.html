@@ -11,7 +11,7 @@
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
 
-<body>
+<body class="text-monospace">
     <audio src="alarm.mp3" id="audio"></audio>
     <div class="timeup-wrapper" id="tup">
         <div class="timeup bg-dark">
@@ -23,9 +23,9 @@
         <div class="bg-dark timeup time-input p-2">
             <h2>Set Timer</h2>
             <div class="inputbox mt-3">
-                <input type="number" class="text-center " id="hr-i" placeholder="hh"><b>:</b>
-                <input type="number" class="text-center" id="min-i" placeholder="mm"><b>:</b>
-                <input type="number" class="text-center" id="sec-i" placeholder="ss" >
+                <input type="number" class="text-center " id="hr-i" placeholder="hh" value="0"><b>:</b>
+                <input type="number" class="text-center" id="min-i" placeholder="mm" value="0"><b>:</b>
+                <input type="number" class="text-center" id="sec-i" placeholder="ss" value="0" >
             </div>
             <button class="btn btn-outline-light m-3 " id="set-btn">set</button>
 
@@ -36,13 +36,14 @@
      <div class="time" id="timebox">
         <span id="hr">00</span>
         <span>:</span>
-        <span id="min">05</span>
+        <span id="min">01</span>
         <span>:</span>
         <span id="sec">00</span>
      </div>
         <div class="btn-wrapper">
-            <button class="btn btn-success" id="start">Start</button>
-            <button class="btn btn-secondary" id="reset">Reset</button>
+            <button class="btn btn-outline-success text-monospace" id="start">Start</button>
+            <button class="btn btn-outline-danger text-monospace" id="reset">Reset</button>
+            <button class="btn btn-outline-warning text-monospace" id="edit">Edit</button>
         </div>
     </div>
 </body>
