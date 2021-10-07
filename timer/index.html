@@ -23,9 +23,9 @@
         <div class="bg-dark timeup time-input p-2">
             <h2>Set Timer</h2>
             <div class="inputbox mt-3">
-                <input type="number" class="text-center " id="hr-i" placeholder="hh" value="0"><b>:</b>
-                <input type="number" class="text-center" id="min-i" placeholder="mm" value="0"><b>:</b>
-                <input type="number" class="text-center" id="sec-i" placeholder="ss" value="0" >
+                <input type="number" class="text-center " id="hr-i" placeholder="hh" value="0" min="0" max="59"><b>:</b>
+                <input type="number" class="text-center" id="min-i" placeholder="mm" value="0" min="0" max="59"><b>:</b>
+                <input type="number" class="text-center" id="sec-i" placeholder="ss" value="0" min="0">
             </div>
             <button class="btn btn-outline-light m-3 " id="set-btn">set</button>
 
@@ -41,7 +41,7 @@
         <span id="sec">00</span>
      </div>
         <div class="btn-wrapper">
-            <button class="btn btn-outline-success text-monospace" id="start">Start</button>
+            <button class="btn btn-outline-success text-monospace " id="start">Start</button>
             <button class="btn btn-outline-danger text-monospace" id="reset">Reset</button>
             <button class="btn btn-outline-warning text-monospace" id="edit">Edit</button>
         </div>

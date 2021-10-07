@@ -1,5 +1,6 @@
 const start = document.getElementById("start");
 const reset = document.getElementById("reset");
+const editbtn=document.getElementById('edit');
 const hrbox = document.getElementById("hr");
 const minbox = document.getElementById("min");
 const secbox = document.getElementById("sec");
@@ -12,7 +13,7 @@ const setbtn = document.getElementById("set-btn");
 const hi = document.getElementById("hr-i");
 const mi = document.getElementById("min-i");
 const si = document.getElementById("sec-i");
-const editbtn=document.getElementById('edit');
+
 let hr = 0;
 let min = 1;
 let sec = 0;
@@ -34,6 +35,7 @@ function starttimer(ih,im,is){
     if (ts == 0) {
       timeupwrapper.classList.add("timeup-active");
       audio.play();
+      resettimer();
     }
   }, 1000);
 }
@@ -45,7 +47,7 @@ function resettimer() {
     hrbox.innerHTML = String(hr).padStart(2,'0');
 }
 //start
-start.addEventListener("click",( )=>{
+start.addEventListener("click",()=>{
     starttimer(hr,min,sec);
 });
 ////reset
