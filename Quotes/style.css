@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Tamma+2&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Baloo Tamma 2', cursive;
+}
+.quoteContainer {
+  display: flex;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgb(243, 233, 233);
+  align-items: center;
+  justify-content: center;
+}
+.box {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 600px;
+  /* height: 400px; */
+  max-height: 100vh;
+  background-color: rgb(248, 248, 248);
+  max-width: 100vw;
+  border-radius: 10px;
+  box-shadow: 0px 0px 5px 10px rgba(152, 150, 150, 0.088);
+}
+.box button{
+  padding: 1rem;
+  background: linear-gradient(90deg, rgb(158, 99, 198) 0%, rgb(220, 132, 132) 58%, rgb(214, 175, 119) 100%);
+  border: none;
+  font-size: 20px;
+  font-weight: bold !important;
+  color: white;
+}
+.box button:hover{
+  opacity: 0.8;
+
+}
+.quote{
+  margin: 10px;
+  height: 100%;
+  display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
+ color: rgb(62, 59, 59);
+}
+.quote h1{
+  padding: 1rem;
+}
+.author{
+  width: 100%;
+}
+small{
+  float: right;
+  padding-right: 30px;
+}
