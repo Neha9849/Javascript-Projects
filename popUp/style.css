@@ -6,7 +6,8 @@ body{
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-color: rgb(162, 122, 202);
+    background-color: lavender;
+  
 }
 .popup-container{
     background-color: rgba(0, 0, 0, 0.354);
@@ -25,20 +26,28 @@ body{
 #popup{
     width: 500px;
     height: 30%;
-    background-color:rebeccapurple;
+    border-radius: 10px;
+    box-shadow: 0 2px 1px 2px rgba(0, 0, 0, 0.1);
+    background-color:rgb(39, 33, 84);
     color: white;
 }
 h1{
     padding: 30px;
-    text-shadow: 2px 3px black;
+    text-shadow: 0px 3px 3px rgba(98, 93, 93, 0.734);
     text-align: center;
+    
 }
 h3{
     text-align: center;
+    color:orange;
+
 }
 #close{
     float: right;
     margin: 10px;
+    border-radius: 50%;
+    background-color: transparent;
+    color:orange;
 }
 
 
