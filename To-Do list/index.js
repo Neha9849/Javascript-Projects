@@ -22,7 +22,7 @@ function addItem(){
   const getArray=JSON.parse(localStorage.getItem("array"));
   const elToAddIndex=getArray.length-1;
   const elToAdd=getArray[elToAddIndex];
-  const div = document.createElement("div");
+    const div = document.createElement("div");
     div.innerHTML = `<div class="container itemsWrapper" id="${elToAddIndex}">
     <div class="container item">
         <span>${elToAdd}</span>
@@ -49,7 +49,7 @@ window.addEventListener("load",()=>{
     let elToLoad=[];
     elToLoad=JSON.parse(localStorage.getItem("array"));
     elToLoad.map((item,i)=>{
-      if(item!=null){
+      if(item!=null && item!="sample task"){
         const div = document.createElement("div");
         div.innerHTML = `<div class="container itemsWrapper" id="${i}">
         <div class="container item">
