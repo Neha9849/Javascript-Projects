@@ -44,6 +44,7 @@ h1 {
   color: aqua;
 }
 .input {
+  font-weight: 500 !important;
   letter-spacing: 3px;
   border: 0 !important;
   border-radius: 0 !important;
