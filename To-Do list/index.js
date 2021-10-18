@@ -2,20 +2,16 @@ const addBtn = document.getElementById("addBtn");
 const wrapper = document.querySelector(".wrapper");
 const addInputEl = document.getElementById("addInput");
 const deleteEl=document.getElementsByTagName("i");
-let inputValue = "";
-let index=0;
-let itemsArray=[];
+let inputValue;
 //add button event
 addBtn.addEventListener("click", () => {
-//    itemsArray.push(inputValue);
-//    console.log(itemsArray)
-//    localStorage.setItem("array",itemsArray);
-//    console.log(localStorage);
-//    console.log(typeof(localStorage.getItem("array")))
-//    let arrayfrmLS=localStorage.getItem("array").split(",");
-//    console.log(arrayfrmLS);
-  addItem();
-    addInputEl.value="";
+  if(inputValue.trim().length!=0){
+    let itemsArray=JSON.parse(localStorage.getItem('array'));
+    itemsArray.push(inputValue);
+     localStorage.setItem("array",JSON.stringify(itemsArray));
+    addItem();
+      addInputEl.value="";
+  }  
 });
 //oninput event
 addInputEl.addEventListener("input", function inputValueFxn(e) {
@@ -23,25 +19,41 @@ addInputEl.addEventListener("input", function inputValueFxn(e) {
 });
 // add item function
 function addItem(){
+  const getArray=JSON.parse(localStorage.getItem("array"));
+  const elToAddIndex=getArray.length-1;
+  const elToAdd=getArray[elToAddIndex];
   const div = document.createElement("div");
-  div.innerHTML = `<div class="container itemsWrapper" id="${index}">
-<div class="container item">
-    <span>${inputValue}</span>
-    <i class="far fa-trash-alt"  onclick="deleteItem(${index})"></i>
-</div>
-</div>`;
-  wrapper.appendChild(div);
-  index++;
+    div.innerHTML = `<div class="container itemsWrapper" id="${elToAddIndex}">
+    <div class="container item">
+        <span>${elToAdd}</span>
+        <i class="far fa-trash-alt"  onclick="deleteItem(${elToAddIndex})"></i>
+    </div>
+    </div>`;
+      wrapper.appendChild(div);  
 }
 //delete item function
 function deleteItem(id){
-    index--;
-    itemsArray.pop(id);
-    localStorage.setItem("array",itemsArray);
-    console.log(itemsArray);
-    console.log(localStorage)
+  const itemsArray=JSON.parse(localStorage.getItem("array"));
+    itemsArray[id]=null;
+    localStorage.setItem("array",JSON.stringify(itemsArray));
    const elToDel=document.getElementById(id);
    elToDel.classList.add('elToDel');
-
 }
+//onload get from storage
+window.addEventListener("load",()=>{
+  const elToLoad=JSON.parse(localStorage.getItem("array"));
+  elToLoad.map((item,i)=>{
+    if(item!=null){
+      const div = document.createElement("div");
+      div.innerHTML = `<div class="container itemsWrapper" id="${i}">
+      <div class="container item">
+          <span>${item}</span>
+          <i class="far fa-trash-alt"  onclick="deleteItem(${i})"></i>
+      </div>
+      </div>`;
+        wrapper.appendChild(div);  
+    }
+  })
+})
+
 
