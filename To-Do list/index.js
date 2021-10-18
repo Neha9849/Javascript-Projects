@@ -41,19 +41,29 @@ function deleteItem(id){
 }
 //onload get from storage
 window.addEventListener("load",()=>{
-  const elToLoad=JSON.parse(localStorage.getItem("array"));
-  elToLoad.map((item,i)=>{
-    if(item!=null){
-      const div = document.createElement("div");
-      div.innerHTML = `<div class="container itemsWrapper" id="${i}">
-      <div class="container item">
-          <span>${item}</span>
-          <i class="far fa-trash-alt"  onclick="deleteItem(${i})"></i>
-      </div>
-      </div>`;
-        wrapper.appendChild(div);  
-    }
-  })
+  if(localStorage.array==undefined){
+    const sample=["sample task"];
+    localStorage.setItem("array",JSON.stringify(sample));
+  }
+  else{
+    let elToLoad=[];
+    elToLoad=JSON.parse(localStorage.getItem("array"));
+    elToLoad.map((item,i)=>{
+      if(item!=null){
+        const div = document.createElement("div");
+        div.innerHTML = `<div class="container itemsWrapper" id="${i}">
+        <div class="container item">
+            <span>${item}</span>
+            <i class="far fa-trash-alt"  onclick="deleteItem(${i})"></i>
+        </div>
+        </div>`;
+          wrapper.appendChild(div);  
+      }
+    })
+
+  }
+  
+ 
 })
 
 
