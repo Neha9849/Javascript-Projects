@@ -16,7 +16,7 @@ nav{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* background-color: #6266af; */
+    background-color: #6266af;
     padding: 0.5rem 10px;
 }
 ul{
